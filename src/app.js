@@ -28,21 +28,20 @@ async function showRecipeList(recipes) {
         message: "Which operation",
         source: (answersSoFar, input) => Utils.fuzzySearch(recipes, input)
     }).then(answer => {
-        inquirer
-            .prompt([{
+        inquirer.prompt([{
                 name: "input",
                 message: "Input"
             }])
             .then(answers => {
-                handle(answers.input, answer.selectedOption);
+                const input = answers.input;
+                const option = answer.selectedOption;
+
+                (async() => {
+                    var recipe = lodash.filter(recipeList, x => x.title === option)[0];
+
+                    let result = await recipe.execute(input);
+                    log(`\n${Chalk.bold(input)} ${Chalk.green.bold(recipe.title)} is ${Chalk.bold(result)}`);
+                })()
             });
     });
-}
-
-async function handle(input, option) {
-    var picked = lodash.filter(recipeList, x => x.title === option)[0];
-
-    let result = await picked.execute(input);
-
-    log(`\n${Chalk.bold(input)} ${Chalk.green.bold(picked.title)} is ${Chalk.bold(result)}`);
 }
