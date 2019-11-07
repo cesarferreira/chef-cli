@@ -52,7 +52,7 @@ async function handle(input, option) {
 
     let result = await picked.execute(input);
 
-    log(`${Chalk.bold(input)} ${Chalk.green().bold(picked.title)} is ${Chalk.bold(result)}`);
+    log(`\n${Chalk.bold(input)} ${Chalk.green.bold(picked.title)} is ${Chalk.bold(result)}`);
 
 }
 
