@@ -118,5 +118,16 @@ const self = (module.exports = {
     init: async(input, flags) => {
         const appList = list.map(x => x.title);
         showList(appList);
+
+        // const a = require('./recipes/miles-to-killometers');
+
+        // log(a.title)
+        // log(a.execute(2))
     }
 });
+
+
+// TODO opacity as an alpha
+// input: 20%
+// output: #60FFFFFFF
+// https://stackoverflow.com/questions/15852122/hex-transparency-in-colors
