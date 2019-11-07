@@ -1,7 +1,7 @@
 {
     "name": "chef-cli",
     "version": "0.0.0",
-    "description": "Quickly open any app in the folder you're currently in",
+    "description": "Quickly converting things into other things",
     "author": {
         "name": "Cesar Ferreira",
         "email": "cesar.manuel.ferreira@gmail.com",
@@ -28,11 +28,11 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/cesarferreira/oh.git"
+        "url": "https://github.com/cesarferreira/chef-cli.git"
     },
     "bugs": {
-        "url": "https://github.com/cesarferreira/oh/issues"
+        "url": "https://github.com/cesarferreira/chef-cli/issues"
     },
-    "homepage": "https://github.com/cesarferreira/oh#readme",
+    "homepage": "https://github.com/cesarferreira/chef-cli#readme",
     "license": "MIT"
 }

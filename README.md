@@ -1,6 +1,6 @@
 
-<h1 align="center">oh</h1>
-<p align="center">Quickly <i>open</i> any app in the folder you're currently in (<i><strong>O</strong>pen <strong>H</strong>ere</i>)</p>
+<h1 align="center">chef-cli</h1>
+<p align="center">Quickly <i>convert</i> some (<i><strong>things</strong> into other <strong>things</strong></i>)</p>
 <p align="center">
   <a href="https://travis-ci.org/cesarferreira/oh"><img src="https://travis-ci.org/cesarferreira/oh.svg?branch=master" alt="Build Status"></a>
   <a href="https://www.npmjs.com/package/oh-cli"><img src="https://img.shields.io/npm/dt/oh-cli.svg" alt="npm"></a>
@@ -15,7 +15,7 @@
 ## Install
 
 ```sh
-npm install -g oh-cli
+npm install -g chef-cli
 ```
 
 ## Usage
