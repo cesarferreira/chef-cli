@@ -6,13 +6,11 @@ const Chalk = require("chalk");
 const Utils = require("./utils/utils");
 const log = console.log;
 const inquirer = require("inquirer");
-const fuzzy = require("fuzzy");
 const lodash = require("lodash");
-const fs = require('fs')
+const fs = require('fs');
 
 const recipeFolder = `${__dirname}/recipes/`
-const recipeList = getRecipeFileList(recipeFolder).map(r => require(`${recipeFolder}/${r}`))
-
+const recipeList = Utils.getRecipeFileList(recipeFolder).map(r => require(`${recipeFolder}/${r}`))
 
 // Main code //
 const self = (module.exports = {
@@ -21,21 +19,6 @@ const self = (module.exports = {
     }
 });
 
-function fuzzySearch(list, textToFind) {
-    textToFind = textToFind || "";
-
-    return new Promise(resolve => {
-        var fuzzyResult = fuzzy.filter(textToFind, list);
-        resolve(fuzzyResult.map(el => el.original));
-    });
-}
-
-function getRecipeFileList(path) {
-    return fs.readdirSync(path).filter(function(file) {
-        return fs.statSync(path + '/' + file).isFile();
-    });
-}
-
 async function showRecipeList(recipes) {
     inquirer.registerPrompt("autocomplete", require("inquirer-autocomplete-prompt"));
     inquirer.prompt({
@@ -43,9 +26,7 @@ async function showRecipeList(recipes) {
         name: "selectedOption",
         pageSize: 10,
         message: "Which operation",
-        source: (answersSoFar, input) => {
-            return fuzzySearch(recipes, input);
-        }
+        source: (answersSoFar, input) => Utils.fuzzySearch(recipes, input)
     }).then(answer => {
         inquirer
             .prompt([{
