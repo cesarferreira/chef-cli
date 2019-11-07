@@ -2,9 +2,9 @@
 <h1 align="center">chef-cli</h1>
 <p align="center">Quickly <i>convert</i> some (<i><strong>things</strong> into other <strong>things</strong></i>)</p>
 <p align="center">
-  <a href="https://travis-ci.org/cesarferreira/oh"><img src="https://travis-ci.org/cesarferreira/oh.svg?branch=master" alt="Build Status"></a>
-  <a href="https://www.npmjs.com/package/oh-cli"><img src="https://img.shields.io/npm/dt/oh-cli.svg" alt="npm"></a>
-  <a href="https://www.npmjs.com/package/oh-cli"><img src="https://img.shields.io/npm/v/oh-cli.svg" alt="npm"></a>
+  <a href="https://travis-ci.org/cesarferreira/chef-cli"><img src="https://travis-ci.org/cesarferreira/chef-cli.svg?branch=master" alt="Build Status"></a>
+  <a href="https://www.npmjs.com/package/chef-cli"><img src="https://img.shields.io/npm/dt/chef-cli.svg" alt="npm"></a>
+  <a href="https://www.npmjs.com/package/chef-cli"><img src="https://img.shields.io/npm/v/chef-cli.svg" alt="npm"></a>
   <a href="https://github.com/cesarferreira/oh/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License"></a>
 </p>
 
@@ -23,7 +23,7 @@ Run the command and enjoy the app being opened where you want it, I use it all t
 
 ```
 Usage
-   $ oh
+   $ chef
 ```
 
 ## Created by
