@@ -40,14 +40,9 @@ async function showList(appList) {
                 .prompt([{
                     name: "input",
                     message: "input"
-                        // default: "Hello world!"
                 }])
                 .then(answers => {
-                    // console.info("Answers:", answers);
-
-                    // log(result);
                     handle(answers.input, answer.selectedOption)
-                        // log(`from: ${answers.input} is ${result}`);
                 });
         });
 }
@@ -55,9 +50,9 @@ async function showList(appList) {
 async function handle(input, option) {
     var picked = lodash.filter(list, x => x.title === option)[0];
 
-    let result = await picked.tt(input);
+    let result = await picked.execute(input);
 
-    log(`${Chalk.bold(input)} ${picked.title} is ${result}`);
+    log(`${Chalk.bold(input)} ${Chalk.green().bold(picked.title)} is ${Chalk.bold(result)}`);
 
 }
 
@@ -68,7 +63,7 @@ function getList() {
     // return [{title:"To Base64"}, "From Base64", "To HEX", "From Hex", "Pound to Euro"];
     return [{
         title: "Pound to Euro",
-        tt: input => {
+        execute: input => {
             var currencyConverter = require("ecb-exchange-rates");
             var settings = {};
             settings.fromCurrency = "GBP";
@@ -78,7 +73,6 @@ function getList() {
 
             return new Promise((resolve, reject) => {
                 currencyConverter.convert(settings, data => {
-                    // log(JSON.stringify(data));
                     resolve(data.amount);
                 });
             });
