@@ -9,7 +9,7 @@ const inquirer = require("inquirer");
 const lodash = require("lodash");
 const fs = require('fs');
 
-const recipeFolder = `${__dirname}/recipes/`
+const recipeFolder = `${__dirname}/../recipes/`
 const recipeList = Utils.getRecipeFileList(recipeFolder).map(r => require(`${recipeFolder}/${r}`))
 
 // Main code //
