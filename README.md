@@ -15,7 +15,7 @@
 ## Install
 
 ```sh
-npm install -g chef-cli
+npm install -g chef-for-terminal
 ```
 
 ## Usage
@@ -25,6 +25,27 @@ Run the command and enjoy the app being opened where you want it, I use it all t
 Usage
    $ chef
 ```
+
+## Create your own recipes:
+```
+   $ chef create "Kilometers to Miles"
+```
+
+a file `kilometers-to-miles.js` is created with:
+
+```js
+module.exports = {
+    title: "Kilometers to Miles",
+    execute: input => {
+        return new Promise((resolve, reject) => {
+            // TODO calculations with 'input'
+            resolve(42);
+        });
+    }
+}
+```
+
+All you have to o is replace the `execute` function with your own
 
 ## Created by
 [Cesar Ferreira](https://cesarferreira.com)
