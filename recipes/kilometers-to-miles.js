@@ -1,9 +1,5 @@
 module.exports = {
     title: "Kilometers to Miles",
-    execute: input => {
-        return new Promise((resolve, reject) => {
-            // TODO calculations with 'input'
-            resolve(42);
-        });
-    }
+    execute: input => input * 0.621371
+
 }

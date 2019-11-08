@@ -10,12 +10,14 @@ const lodash = require("lodash");
 const fs = require("fs");
 
 const recipeFolder = `${__dirname}/../recipes/`;
-const recipeList = Utils.getRecipeFileList(recipeFolder).map(r => require(`${recipeFolder}/${r}`));
+const recipeList = Utils.getRecipeFileList(recipeFolder).map(r =>
+    require(`${recipeFolder}/${r}`)
+);
 
 // Main code //
 const self = (module.exports = {
     init: async(input, flags) => {
-        const first = input[0];
+        const first = input[0] || "";
         const params = input.subarray(1, input.length);
 
         switch (first.toLowerCase()) {
@@ -30,12 +32,12 @@ const self = (module.exports = {
     }
 });
 
-
 function handleCreate(params) {
     if (params.length > 1) {
-        Utils.titleError(`Only 1 parameter allowed, example:\n create "Pound to Euro"`);
+        Utils.titleError(
+            `Only 1 parameter allowed, example:\n create "Pound to Euro"`
+        );
     } else {
-
         const source = `module.exports = {
     title: "{{title}}",
     execute: input => {
@@ -46,9 +48,13 @@ function handleCreate(params) {
     }
 }`;
 
-        const Handlebars = require('handlebars');
-        const fileName = params[0].toLowerCase().split(" ").join("-") + ".js";
-        const filePath = recipeFolder + fileName
+        const Handlebars = require("handlebars");
+        const fileName =
+            params[0]
+            .toLowerCase()
+            .split(" ")
+            .join("-") + ".js";
+        const filePath = recipeFolder + fileName;
 
         const template = Handlebars.compile(source);
 
@@ -88,11 +94,8 @@ async function showRecipeList(recipes) {
                         var recipe = lodash.filter(recipeList, x => x.title === option)[0];
 
                         let result = await recipe.execute(input);
-                        log(`\
-                                                    n$ { Chalk.bold(input) }
-                                                    $ { Chalk.green.bold(recipe.title) }
-                                                    is $ { Chalk.bold(result) }
-                                                    `);
+                        log();
+                        log(`${Chalk.bold(input)} ${Chalk.green.bold(recipe.title)} is ${Chalk.bold(result)}`);
                     })();
                 });
         });

@@ -1,4 +1,4 @@
 module.exports = {
-    title: "Miles to Killometers",
-    execute: input => input * 2
+    title: "Miles to Kilometers",
+    execute: input => input * 1.609344
 };
