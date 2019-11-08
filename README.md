@@ -26,12 +26,12 @@ Usage
    $ chef
 ```
 
-## Create your own recipes:
-```
-   $ chef create "Kilometers to Miles"
+### Create your own recipes:
+```js
+$ chef create "Kilometers to Miles"
 ```
 
-a file `kilometers-to-miles.js` is created with:
+A file `kilometers-to-miles.js` is created with:
 
 ```js
 module.exports = {
@@ -45,7 +45,7 @@ module.exports = {
 }
 ```
 
-All you have to o is replace the `execute` function with your own
+All you have to do is replace the `execute` function with your own
 
 ## Created by
 [Cesar Ferreira](https://cesarferreira.com)
