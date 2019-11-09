@@ -38,7 +38,7 @@ npm link
 $ chef create "Kilometers to Miles"
 ```
 
-A file `kilometers-to-miles.js` is created inside `recipes/` folder with:
+A file `kilometers-to-miles.js` is automatically created inside `recipes/` folder with:
 
 ```js
 module.exports = {
