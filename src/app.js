@@ -22,6 +22,9 @@ const self = (module.exports = {
 
         switch (first.toLowerCase()) {
             case "create":
+            case "bake":
+            case "prepare":
+            case "make":
             case "new":
                 handleCreate(params);
                 break;

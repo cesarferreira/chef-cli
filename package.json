@@ -1,7 +1,7 @@
 {
-    "name": "chef-cli",
+    "name": "chef-for-terminal",
     "version": "0.0.0",
-    "description": "Quickly converting things into other things",
+    "description": "Quickly convert things into other things",
     "author": {
         "name": "Cesar Ferreira",
         "email": "cesar.manuel.ferreira@gmail.com",
