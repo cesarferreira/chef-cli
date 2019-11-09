@@ -27,6 +27,13 @@ Usage
 ```
 
 ### Create your own recipes:
+
+Clone the repo:
+```bash
+git clone https://github.com/cesarferreira/chef-cli
+cd chef-cli
+npm link
+```
 ```js
 $ chef create "Kilometers to Miles"
 ```
@@ -45,10 +52,13 @@ module.exports = {
 }
 ```
 
-All you have to do is replace the `execute` function with your own
+All you have to do is replace the `execute` function with your own and open a pull request!
 
-## Created by
-[Cesar Ferreira](https://cesarferreira.com)
+<p align="center">
+  <img src="extras/km-to-mil.png" width="100%" />
+</p>
 
-## License
-MIT © [Cesar Ferreira](http://cesarferreira.com)
+----------
+
+Made with ❤️ by [Cesar Ferreira](https://cesarferreira.com)
+
