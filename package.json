@@ -9,7 +9,7 @@
     },
     "scripts": {
         "start": "node cli.js",
-        "test": "node test.js"
+        "test": "npx ava --verbose"
     },
     "bin": {
         "chef": "cli.js"
@@ -27,6 +27,9 @@
         "meow": "^5.0.0",
         "prompt": "^1.0.0",
         "update-notifier": "^3.0.0"
+    },
+    "devDependencies": {
+        "ava": "^2.1.0"
     },
     "repository": {
         "type": "git",
