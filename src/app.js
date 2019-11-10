@@ -51,18 +51,29 @@ function handleCreate(params) {
     }
 }`;
 
-        const fileName = params[0].toLowerCase().split(" ").join("-") + ".js";
-        const filePath = recipeFolder + fileName;
+        // Recipe
+        const recipeFileName = params[0].toLowerCase().split(" ").join("-") + ".js";
+        const recipeFilePath = recipeFolder + recipeFileName;
 
-        createFileWith(filePath, fileName, recipeTemplate, { title: params[0] })
-            // const handleBarTemplate = require("handlebars").compile(source);
+        createFileWith(recipeFilePath, recipeFileName, recipeTemplate, { title: params[0] })
 
-        // fs.writeFile(filePath, handleBarTemplate({ title: params[0] }), err => {
-        //     if (err) {
-        //         return console.error(`Failed to create file: ${err.message}.`);
-        //     }
-        //     log(`\nCreated ${Chalk.green(fileName)} @ ${recipeFolder}`);
-        // });
+
+        // Test file
+
+        const testTemplate = `import test from "ava";
+        
+test("{{title}} test", t => {
+    const input = "TODO";
+    const executedInput = require("../recipes/{{recipeFileName}}").execute(input);
+    const expectedResult = "TODO";
+    t.is(executedInput, expectedResult);
+});`;
+
+        const testFileName = params[0].toLowerCase().split(" ").join("-") + ".test" + ".js";
+        const testFilePath = `${__dirname}/../tests/` + testFileName;
+
+        createFileWith(testFilePath, testFileName, testTemplate, { title: params[0], recipeFileName: recipeFileName })
+
     }
 }
 
