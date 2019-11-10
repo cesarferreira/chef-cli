@@ -41,7 +41,7 @@ function handleCreate(params) {
             `Only 1 parameter allowed, example:\n create "Pound to Euro"`
         );
     } else {
-        const source = `module.exports = {
+        const recipeTemplate = `module.exports = {
     title: "{{title}}",
     execute: input => {
         return new Promise((resolve, reject) => {
@@ -51,23 +51,31 @@ function handleCreate(params) {
     }
 }`;
 
-        const Handlebars = require("handlebars");
-        const fileName =
-            params[0]
-            .toLowerCase()
-            .split(" ")
-            .join("-") + ".js";
+        const fileName = params[0].toLowerCase().split(" ").join("-") + ".js";
         const filePath = recipeFolder + fileName;
 
-        const template = Handlebars.compile(source);
+        createFileWith(filePath, fileName, recipeTemplate, { title: params[0] })
+            // const handleBarTemplate = require("handlebars").compile(source);
 
-        fs.writeFile(filePath, template({ title: params[0] }), err => {
-            if (err) {
-                return console.error(`Failed to create file: ${err.message}.`);
-            }
-            log(`\nCreated ${Chalk.green(fileName)} @ ${recipeFolder}`);
-        });
+        // fs.writeFile(filePath, handleBarTemplate({ title: params[0] }), err => {
+        //     if (err) {
+        //         return console.error(`Failed to create file: ${err.message}.`);
+        //     }
+        //     log(`\nCreated ${Chalk.green(fileName)} @ ${recipeFolder}`);
+        // });
     }
+}
+
+function createFileWith(filePath, fileName, template, templateObject) {
+
+    const handleBarTemplate = require("handlebars").compile(template);
+
+    fs.writeFile(filePath, handleBarTemplate(templateObject), err => {
+        if (err) {
+            return console.error(`Failed to create file: ${err.message}.`);
+        }
+        log(`\nCreated ${Chalk.green(fileName)} @ ${recipeFolder}`);
+    });
 }
 
 async function showRecipeList(recipes) {
