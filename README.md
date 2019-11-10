@@ -29,11 +29,13 @@ Usage
 ### Create your own recipes:
 
 Clone the repo:
+
 ```bash
 git clone https://github.com/cesarferreira/chef-cli
 cd chef-cli
 npm link
 ```
+
 ```js
 $ chef create "Kilometers to Miles"
 ```
