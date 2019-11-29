@@ -28,7 +28,10 @@ const self = (module.exports = {
             case "new":
                 handleCreate(params);
                 break;
-
+            case "list":
+                Utils.title("List of recipes\n")
+                recipeList.forEach(x => log(`- ${x.title}`))
+                break;
             default:
                 showRecipeList(recipeList.map(x => x.title));
         }

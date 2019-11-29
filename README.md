@@ -26,6 +26,24 @@ Usage
    $ chef
 ```
 
+### Current list of recipes
+
+- Celcius to Fahrenheit
+- Celcius to Kelvin
+- Decimal to Hexadecimal
+- Decode Base64
+- Decode Binary
+- Decode JWT Token
+- Encode Base64
+- Encode to Binary
+- Fahrenheit to Celcius
+- Pound to Euro
+- Pound to Dollar
+- Hexadecimal to Decimal
+- Kelvin to Celcius
+- Kilometers to Miles
+- Miles to Kilometers
+
 ### Create your own recipes:
 
 Clone the repo:
